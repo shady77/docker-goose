@@ -10,4 +10,4 @@ WORKDIR /app
 RUN mkdir /app/data
 VOLUME /app/data
 COPY --from=builder /go/bin/goose .
-CMD ["/bin/sh", "-c", "/app/goose -dir /app/data ${DRIVER} ${CONNECTION_STRING} ${COMMAND}"]
+CMD ["/bin/sh", "-c", "/app/goose -dir /app/data ${DRIVER} \"${CONNECTION_STRING}\" ${COMMAND}"]
